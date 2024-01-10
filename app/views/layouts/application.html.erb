@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+     <meta name="csrf-token" content="<%= form_authenticity_token %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <h1>Delete Post</h1>
+
+  <form action="/posts/1" method="post">
+    <!-- CSRF Token -->
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_token" value="<%= form_authenticity_token %>">
+
+    <!-- Diğer form alanları -->
+    
+    <input type="submit" value="Delete">
+  </form>
+    <%= yield %>
+  </body>
+</html>
